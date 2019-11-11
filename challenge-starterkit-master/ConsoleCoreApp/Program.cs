@@ -20,7 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(MatrixDetSolver.GetAns(Console.ReadLine()));
+            Console.WriteLine(InverseMatrix.GetAnswer(@"40 & -8 \\ -100 & 20"));
         }
     }
 }

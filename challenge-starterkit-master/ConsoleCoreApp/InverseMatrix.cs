@@ -18,6 +18,7 @@ namespace ConsoleCoreApp
              
              стоит еще потестить когда нормальный ответ
              //*/
+             
             var strDet = MatrixDetSolver.GetAns(input);
             var det = long.Parse(strDet);
             var a = MatrixDetSolver.GetArrayFromTheString(input);
@@ -36,23 +37,28 @@ namespace ConsoleCoreApp
             var answer = new StringBuilder();
             for (var i = 0; i < dimensionMatrix; i++)
             {
+                a[i] = new decimal[dimensionMatrix];
+            }
+            for (var i = 0; i < dimensionMatrix; i++)
+            {
                 for (var j = 0; j < dimensionMatrix; j++)
                 {
                     a[j][i] = matrix[i][j] * det;
                     if (j != dimensionMatrix - 1)
                     {
-                        answer.Append(a[j][i] + " & ");
+                        answer.Append(a[j][i].ToString(CultureInfo.InvariantCulture) + " & ");
                     }
                     else if (dimensionMatrix -1 != i)
                     {
-                        answer.Append(a[j][i] + " \\\\\n");
+                        answer.Append(a[j][i].ToString(CultureInfo.InvariantCulture) + " \\\\ ");
                     }
                     else
                     {
-                        answer.Append(a[j][i]);
+                        answer.Append(a[j][i].ToString(CultureInfo.InvariantCulture));
                     }
                 }
             }
+
             return answer.ToString();
         }
     }
