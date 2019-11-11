@@ -21,7 +21,7 @@ namespace ConsoleCoreApp
                 default: return string.Empty;
             }
         }
-
+        
         public string GetTypeOfTheTask(string hint)
         {
             return hint switch

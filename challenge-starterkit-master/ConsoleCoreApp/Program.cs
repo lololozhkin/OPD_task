@@ -20,7 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(StringNumber.GetNumber(Console.ReadLine()));
+            Console.WriteLine(MatrixDetSolver.GetAns(Console.ReadLine()));
         }
     }
 }
