@@ -8,18 +8,19 @@ namespace ConsoleCoreApp
     {
         private string GetAns(string type, string task)
         {
-            task = GetTypeOfTheTask(type);
-            switch (type)
+            type = GetTypeOfTheTask(type);
+            return type switch
             {
-                case "math": return MathSolution.GetAns(task);
-                case "polynomial-root": return PolynomsSolver.GetRoot(task);
-                case "shape": return ShapeSolver.GetAns(task);
-                case "determinant": return MatrixDetSolver.GetAns(task);
-                case "cypher": return Caesar.GetAns(task);
-                case "string-number": return StringNumber.GetNumber(task);
-                case "starter": return "42";
-                default: return string.Empty;
-            }
+                "math" => MathSolution.GetAns(task),
+                "polynomial-root" => PolynomsSolver.GetRoot(task),
+                "shape" => ShapeSolver.GetAns(task),
+                "determinant" => MatrixDetSolver.GetAns(task),
+                "cypher" => Caesar.GetAns(task),
+                "string-number" => StringNumber.GetNumber(task),
+                "starter" => "42",
+                "inverse-matrix" => InverseMatrix.GetAnswer(task),
+                _ => string.Empty
+            };
         }
         
         public string GetTypeOfTheTask(string hint)

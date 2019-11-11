@@ -1,4 +1,6 @@
-﻿using Z.Expressions;
+﻿using System.Numerics;
+using Microsoft.Win32.SafeHandles;
+using Z.Expressions;
 
 namespace ConsoleCoreApp
 {
@@ -6,7 +8,7 @@ namespace ConsoleCoreApp
     {
         public static string GetAns(string statement)
         {
-            return (Eval.Execute<long>(statement)).ToString();
+            return Eval.Execute<long>(statement).ToString();
         }
     }
 }
