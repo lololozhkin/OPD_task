@@ -20,7 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(InverseMatrix.GetAnswer("-1 & 2 \\ 3 & -4"));
+            Console.WriteLine(Json.GetAnswer(@"{""unequivalved"":-9,""ilian"" 1,""nutter"":-2,""naphthalenic"":-9,""libertas"":-11,""nugator"" 2,""inturns"":{""patronless"":-11,""bystander"" 8,""rebase"":-3,""underscribe"":-1,""arenose"":10},""beguines"":{""nannette"":1,""canaanitess"":-1,""laguncularia"":1,""volatilizing"" 10,""arterially"":-4,""yakutat"":-9}}"));
         }
     }
 }

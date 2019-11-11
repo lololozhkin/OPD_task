@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 
 namespace ConsoleCoreApp
 {
@@ -17,7 +18,7 @@ namespace ConsoleCoreApp
             var current = new StringBuilder();
             var flag = true;
             int answer = 0;
-            Console.WriteLine(a);
+            //Console.WriteLine(a);
             foreach (var i in a)
             {
                 if (!flag && i != ',')
