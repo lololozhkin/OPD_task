@@ -20,7 +20,9 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(Json.GetAnswer(@"{""unequivalved"":-9,""ilian"" 1,""nutter"":-2,""naphthalenic"":-9,""libertas"":-11,""nugator"" 2,""inturns"":{""patronless"":-11,""bystander"" 8,""rebase"":-3,""underscribe"":-1,""arenose"":10},""beguines"":{""nannette"":1,""canaanitess"":-1,""laguncularia"":1,""volatilizing"" 10,""arterially"":-4,""yakutat"":-9}}"));
+            Console.WriteLine(TheLargestMatch.GetAnswer("ANAlANAlANAlANAl they saw flat on the floor in front of them a troll even larger than the one they had tackled out cold ANAlANAlANAl",
+                "h5ydxqkjxfrkhx26xh5yxfr22sx76xfs26hx2fxh5ymxkxhs2rrxy3y6xrkseysxh5k6xh5yx26yxh5ydx5kixhkcbryix2uhxc2ri", 
+                "tackled"));
         }
     }
 }
