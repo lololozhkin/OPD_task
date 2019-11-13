@@ -1,11 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+
 
 namespace ConsoleCoreApp
 {
-    internal class ShapeSolver
+    public class ShapeSolver
     {
-        public static string GetAns(string line)
+        public static string GetAnswer(string line)
         {
             var pts = line.Replace("(", "").Replace(")", "").Split(' ');
             var xyu = new List<List<int>>();
@@ -37,38 +38,69 @@ namespace ConsoleCoreApp
                 maxY = Math.Max(maxY, sperm[1]);
                 minY = Math.Min(minY, sperm[1]);
             }
-
-            int maxYminX = Int32.MaxValue;
+            
+            int maxXmaxY = Int32.MinValue;
+            int maxXminY = Int32.MaxValue;
+            int minXmaxY = Int32.MinValue;
+            int minXminY = Int32.MaxValue;
             int maxYmaxX = Int32.MinValue;
-            int minYminX = Int32.MaxValue;
+            int maxYminX = Int32.MaxValue;
             int minYmaxX = Int32.MinValue;
+            int minYminX = Int32.MaxValue;
+
             foreach (var sperm in xyu)
             {
+                if (sperm[0] == maxX)
+                {
+                    maxXmaxY = Math.Max(maxXmaxY, sperm[1]);
+                    maxXminY = Math.Min(maxXminY, sperm[1]);
+                }
+                if (sperm[0] == minX)
+                {
+                    minXmaxY = Math.Max(minXmaxY, sperm[1]);
+                    minXminY = Math.Min(minXminY, sperm[1]);
+                }
                 if (sperm[1] == maxY)
                 {
-                    Console.WriteLine(sperm[0]);
                     maxYminX = Math.Min(maxYminX, sperm[0]);
                     maxYmaxX = Math.Max(maxYmaxX, sperm[0]);
                 }
-                else if (sperm[1] == minY)
+                if (sperm[1] == minY)
                 {
                     minYminX = Math.Min(minYminX, sperm[0]);
                     minYmaxX = Math.Max(minYmaxX, sperm[0]);
                 }
             }
 
-            var cnt = 0;
-            if (maxYmaxX - maxYminX == maxX - minX)
-                cnt++;
-            if (minYmaxX - minYminX == maxX - minX)
-                cnt++;
+            int lineA = minY - maxXminY;
+            int lineB = maxX - minYmaxX;
+            int lineC = minYmaxX * maxXminY - maxX * minY;
+            
 
-            if (cnt == 0)
-                return "cirle";
-            else if (cnt == 1)
-                return "equilateraltriangle";
-            else
-                return "square";
+            if (lineA != 0 || lineB != 0)
+            {
+                foreach (var sperm in xyu)
+                {
+                    if ((double)(lineA * sperm[0] + lineB * sperm[1] + lineC) / Math.Sqrt(Sqr(lineA) + Sqr(lineB)) < -3)
+                    {
+                        return "ellipse";
+                    }
+                }
+            }
+
+            int cheat = 100;
+            if (Sqr(maxX + minX - minYmaxX - maxYminX) + Sqr(maxXmaxY + minXminY - minY - maxY) > cheat) {
+                return "triangle";
+
+            }
+
+            return "rectangle";
         }
+        
+        public static int Sqr(int d)
+        {
+            return d * d;
+        }
+
     }
 }
