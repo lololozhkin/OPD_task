@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Security;
 using System.Text;
 
@@ -8,8 +9,23 @@ namespace ConsoleCoreApp
     public static class TheLargestMatch
     {
         private static string alphabet = "abcdefghijklmnopqrstuvwxyz0123456789' ";
+        private static string text = string.Empty;
 
-        public static string GetAnswer(string text, string toFind, string key)
+        public static bool IsTextSet()
+        {
+            return text != string.Empty;
+        }
+
+        public static void Initialize()
+        {
+            text = InputText.GetText();
+        }
+
+        public static string getAns(string task)
+        {
+            var parts = task.Split('|')
+        }
+        private static string GetAnswer(string text, string toFind, string key)
         {
             toFind = GetPreparedString(toFind, key);
             var answer = string.Empty;

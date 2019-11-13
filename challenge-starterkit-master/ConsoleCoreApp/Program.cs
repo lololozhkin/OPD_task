@@ -20,9 +20,9 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(TheLargestMatch.GetAnswer("ANAlANAlANAlANAl they saw flat on the floor in front of them a troll even larger than the one they had tackled out cold ANAlANAlANAl",
-                "h5ydxqkjxfrkhx26xh5yxfr22sx76xfs26hx2fxh5ymxkxhs2rrxy3y6xrkseysxh5k6xh5yx26yxh5ydx5kixhkcbryix2uhxc2ri", 
-                "tackled"));
+            Console.WriteLine(TheLargestMatch.GetAnswer(InputText.GetText(),
+                "7c5zmcp24z7yz7qvyz yywzecze9phd4z7yo4zeyywzspd''y22z97y'yz97q9zvy'3z4q3ze7qkywz7qw4ez5d97z7dlzdwz97y",
+                "quirrell"));
         }
     }
 }
