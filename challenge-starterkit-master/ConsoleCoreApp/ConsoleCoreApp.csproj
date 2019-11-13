@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="4.9.0" />
     <PackageReference Include="Z.Expressions.Eval" Version="2.9.57" />
   </ItemGroup>
 
