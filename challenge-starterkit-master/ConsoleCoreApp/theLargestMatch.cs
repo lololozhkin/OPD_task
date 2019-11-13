@@ -23,9 +23,11 @@ namespace ConsoleCoreApp
 
         public static string getAns(string task)
         {
-            var parts = task.Split('|')
+            var parts = task.Split('|');
+            var key = parts[0].Split('=')[1];
+            return GetTheLongestMatch(parts[1], key);
         }
-        private static string GetAnswer(string text, string toFind, string key)
+        private static string GetTheLongestMatch(string toFind, string key)
         {
             toFind = GetPreparedString(toFind, key);
             var answer = string.Empty;

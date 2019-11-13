@@ -9,15 +9,17 @@ namespace ConsoleCoreApp
     {
         public static string GetAns(string task)
         {
-            return task.StartsWith("first") ? GetVejenerAns(task) : GetCeasarAns(task);
+            return task.StartsWith("first") ? GetNonCeasarCypherAns(task) : GetCeasarAns(task);
         }
 
-        private static string GetVejenerAns(string task)
+        private static string GetNonCeasarCypherAns(string task)
         {
-            task =
-                "first longest word=quirrell|7c5zmcp24z7yz7qvyz yywzecze9phd4z7yo4zeyywzspd''y22z97y'yz97q9zvy'3z4q3ze7qkywz7qw4ez5d97z7dlzdwz97y";
-            var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789' ";
-            return string.Empty;
+            if (!TheLargestMatch.IsTextSet())
+            {
+                TheLargestMatch.Initialize();
+            }
+
+            return TheLargestMatch.getAns(task);
         }
 
         private static string GetCeasarAns(string task)

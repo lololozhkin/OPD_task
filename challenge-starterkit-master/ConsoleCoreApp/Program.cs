@@ -20,9 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, type, count);
             //*/
-            Console.WriteLine(TheLargestMatch.GetAnswer(InputText.GetText(),
-                "7c5zmcp24z7yz7qvyz yywzecze9phd4z7yo4zeyywzspd''y22z97y'yz97q9zvy'3z4q3ze7qkywz7qw4ez5d97z7dlzdwz97y",
-                "quirrell"));
+            Console.WriteLine(Caesar.GetAns("first longest word=quirrell|7c5zmcp24z7yz7qvyz yywzecze9phd4z7yo4zeyywzspd''y22z97y'yz97q9zvy'3z4q3ze7qkywz7qw4ez5d97z7dlzdwz97y"));
         }
     }
 }
