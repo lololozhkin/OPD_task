@@ -7,7 +7,7 @@ namespace ConsoleCoreApp
     {
         static void Main(string[] args)
         {
-            /*
+            //*
             const string teamSecret = "wHUYV6IVfJh7akUFzCmSqG9Fk/z/GwX"; // Вставь сюда ключ команды
             var challengeClient = new ChallengeClient(teamSecret);
             const string challengeId = "projects-course";
@@ -20,7 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, count);
             //*/
-            Console.WriteLine(InverseMatrix.GetAnswer(@"3 & -6 \\ -6 & 8"));
+            //Console.WriteLine(InverseMatrix.GetAnswer(@"3 & -6 \\ -6 & 8"));
         }
     }
 }
