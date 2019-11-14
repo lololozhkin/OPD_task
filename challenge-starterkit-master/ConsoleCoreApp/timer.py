@@ -3,7 +3,7 @@ from ComplexSolver import complex_solver
 
 if __name__ == '__main__':
     while True:
-        time.sleep(10)
+        time.sleep(2)
         answer = ''
         with open('in.txt', 'r', encoding='utf-8') as data_file:
             data = data_file.readlines()
