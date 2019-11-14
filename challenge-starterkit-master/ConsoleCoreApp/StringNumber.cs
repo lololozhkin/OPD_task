@@ -6,6 +6,7 @@ namespace ConsoleCoreApp
     {
         public static string GetNumber(string input)
         {
+            input = input.Replace('-', ' ');
             var result = 0L;
             var currentCombination = 0;
             foreach (var word in input.Split())

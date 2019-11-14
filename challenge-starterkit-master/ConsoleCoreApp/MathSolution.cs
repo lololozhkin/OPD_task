@@ -8,7 +8,16 @@ namespace ConsoleCoreApp
     {
         public static string GetAns(string statement)
         {
-            return Eval.Execute<long>(statement).ToString();
+            var complex = false;
+            foreach (var symbol in statement)
+            {
+                if (symbol == 'i')
+                {
+                    complex = true;
+                }
+            }
+
+            return !complex ? Eval.Execute<long>(statement).ToString() : MathSolver.GetAnswer(statement);
         }
     }
 }

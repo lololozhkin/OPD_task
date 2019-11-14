@@ -27,6 +27,7 @@ namespace ConsoleCoreApp
             var key = parts[0].Split('=')[1];
             return GetTheLongestMatch(parts[1], key);
         }
+
         private static string GetTheLongestMatch(string toFind, string key)
         {
             toFind = GetPreparedString(toFind, key);
