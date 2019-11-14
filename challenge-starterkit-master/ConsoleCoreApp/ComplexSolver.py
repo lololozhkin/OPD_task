@@ -1,5 +1,7 @@
 s = input()
 
+s = s.replace(" ", "")
+
 s = s.replace("i", "*i")
 s = s.replace("-*", "-")
 s = s.replace("+*", "+")
@@ -15,6 +17,14 @@ s = s.replace("**", "*")
 s = s.replace("(*", "(")
 if (s[0] == '*'):
     s = s[1:]
+
+s = s.replace("i", "i*")
+s = s.replace("*-", "-")
+s = s.replace("*+", "+")
+s = s.replace("**", "*")
+s = s.replace("*)", ")")
+if (s[-1] == '*'):
+    s = s[:-1]
 
 s = s.replace(")", ")*")
 s = s.replace("*-", "-")
@@ -68,12 +78,23 @@ ans = ""
 if (abs(real) < 1e-9 and abs(imag) < 1e-9):
     ans = "0"
 elif (abs(real) < 1e-9):
-    ans = str(int(imag)) + "i"
+    if (abs(imag - 1) < 1e-9):
+        ans = "i"
+    elif (abs(imag + 1) < 1e-9):
+        ans = "-i"
+    else:
+        ans = str(int(imag)) + "i"
 elif (abs(imag) < 1e-9):
     ans = str(int(real))
 elif (imag > 1e-9):
-    ans = str(int(real)) + "+" + str(int(imag)) + "i"
+    if (abs(imag - 1) < 1e-9):
+        ans = str(int(real)) + "+i"
+    else:
+        ans = str(int(real)) + "+" + str(int(imag)) + "i"
 else:
-    ans = str(int(real)) + str(int(imag)) + "i"
+    if (abs(imag + 1) < 1e-9):
+        ans = str(int(real)) + "-i"
+    else:
+        ans = str(int(real)) + str(int(imag)) + "i"
 
 print(ans)
