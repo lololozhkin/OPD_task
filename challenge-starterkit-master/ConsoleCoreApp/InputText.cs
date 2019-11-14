@@ -11,7 +11,7 @@ namespace ConsoleCoreApp
             /*
              Скачай себе локально тхт и вставь свой путь!!!!
              */
-            StreamReader t = new StreamReader("HarryPotterChapter1");
+            StreamReader t = new StreamReader("PreparedText.txt");
             var currentLine = new StringBuilder();
             currentLine.Append(t.ReadLine());
             //Console.WriteLine(currentLine.ToString());
