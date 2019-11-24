@@ -26,7 +26,9 @@ namespace ConsoleCoreApp
 
         public static string GetAns(string input)
         {
-            //*
+
+            return Determinate.GetAnswer(input);
+            /*
             var det = 1.0M;
             const decimal EPS = 1e-9M;
             var a = GetArrayFromTheString(input);

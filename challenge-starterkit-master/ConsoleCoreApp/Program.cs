@@ -8,7 +8,7 @@ namespace ConsoleCoreApp
         static void Main(string[] args)
         {
             //*
-            const string teamSecret = "wHUYV6IVfJh7akUFzCmSqG9Fk/z/GwX"; // Вставь сюда ключ команды
+            const string teamSecret = "R/72jERH1xsugaFANPVcHmgIiRoMyT4O"; // Вставь сюда ключ команды
             var challengeClient = new ChallengeClient(teamSecret);
             const string challengeId = "projects-course";
             var challenge = challengeClient.GetChallengeAsync(challengeId).Result;
@@ -20,7 +20,7 @@ namespace ConsoleCoreApp
             var count = int.Parse(Console.ReadLine());    
             sender.SendSomeAnswers(challengeClient, challenge, count);
             //*/
-            //Console.WriteLine(InverseMatrix.GetAnswer(@"-10 & -5 & 2 \\ -5 & -7 & 9 \\ -8 & 8 & -4"));
+            //Console.WriteLine(Caesar.GetAns("first longest word=underground|marherxhyezmgvbh0ehihve0hhzhnezassuvbeavegv0hnbnogv0ema1he8xhnhexgbhesramacrurhseav0esramab7urhsebnh8"));
         }
     }
 }

@@ -88,7 +88,7 @@ namespace ConsoleCoreApp
                 }
             }
 
-            int cheat = 100;
+            int cheat = 9;
             if (Sqr(maxX + minX - minYmaxX - maxYminX) + Sqr(maxXmaxY + minXminY - minY - maxY) > cheat) {
                 return "triangle";
 

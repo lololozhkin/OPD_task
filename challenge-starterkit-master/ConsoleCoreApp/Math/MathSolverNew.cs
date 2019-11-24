@@ -13,13 +13,13 @@ namespace ConsoleCoreApp
     {
         public static string GetAnswer(string input)
         {
-            StreamWriter sw = new StreamWriter(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\in.txt");
+            StreamWriter sw = new StreamWriter(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\Math\in.txt");
             sw.Write(input);
             sw.Close();
 
             Thread.Sleep(5000);
             
-            StreamReader sr = new StreamReader(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\out.txt");
+            StreamReader sr = new StreamReader(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\Math\out.txt");
             var ans = sr.ReadLine();
             sr.Close();
             

@@ -35,7 +35,7 @@ namespace ConsoleCoreApp
         
         public string GetTypeOfTheTask(string hint)
         {
-            if (hint.StartsWith("Посчитай определитель матрицы. Во входных данных строки матрицы разделяются двойным обратным слэшем"))
+            if (hint.StartsWith("Посчитай определитель матрицы."))
             {
                 return "determinant";
             }
@@ -112,7 +112,8 @@ namespace ConsoleCoreApp
                 Console.WriteLine($"Ура! Ответ угадан!");
             else if (updatedTask.Status == TaskStatus.Failed)
                 Console.WriteLine($"Похоже ответ не подошел и задачу больше сдать нельзя...");
-            return updatedTask.Status == TaskStatus.Success;
+            //return updatedTask.Status == TaskStatus.Success;
+            return true;
         }
     }
 }

@@ -9,17 +9,17 @@ using System.Timers;
 
 namespace ConsoleCoreApp
 {
-    class MathSolver
+    class Determinate
     {
         public static string GetAnswer(string input)
         {
-            StreamWriter sw = new StreamWriter("/home/asd/testMath/in1.txt");
+            StreamWriter sw = new StreamWriter(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\Determinante\in1.txt");
             sw.Write(input);
             sw.Close();
 
             Thread.Sleep(5000);
             
-            StreamReader sr = new StreamReader("/home/asd/testMath/out1.txt");
+            StreamReader sr = new StreamReader(@"D:\Trash\Downloads\challenge-starterkit-master228\challenge-starterkit-master\ConsoleCoreApp\Determinante\out1.txt");
             var ans = sr.ReadLine();
             sr.Close();
             
