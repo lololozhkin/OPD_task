@@ -7,9 +7,11 @@ namespace ConsoleCoreApp
 {
     public static class Json
     {
-        public static string GetAnswer(string a)
+       public static string GetAnswer(string a)
         {
             a = a.Replace(" ", ",");
+            a = a.Replace("\"", " ");
+            a = a.Replace(":{", " ");
             a = a.Replace(":{", " ");
             a = a.Replace(":", ",");
             a = a.Replace("{", String.Empty);
