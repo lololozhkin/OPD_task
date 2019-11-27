@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using TaskStatus = Challenge.DataContracts.TaskStatus;
 
 namespace Challenge
 {
@@ -91,14 +92,25 @@ namespace Challenge
             throw ErrorResponseException.ExtractFrom(response);
         }
 
+        [Obsolete("Используйте GetTasksAsync вместо этого метода")]
+        public Task<List<TaskResponse>> GetAllTasksAsync()
+        {
+            throw new NotSupportedException("Используйте GetTasksAsync вместо этого метода");
+        }
+
         /// <summary>
         /// Получает все задания, запрошенные командой
         /// </summary>
         /// <returns>Список заданий</returns>
-        public async Task<List<TaskResponse>> GetAllTasksAsync()
+        public async Task<List<TaskResponse>> GetTasksAsync(string round, string taskType, TaskStatus taskStatus, int offset = 0, int count = 50)
         {
             var query = HttpUtility.ParseQueryString(string.Empty);
             query.Add("secret", teamSecret);
+            query.Add("round", round);
+            query.Add("type", taskType);
+            query.Add("status", ((int)taskStatus).ToString());
+            query.Add("offset", offset.ToString());
+            query.Add("count", count.ToString());
 
             var url = new UriBuilder(baseUrl);
             url.Path = $"/api/tasks";

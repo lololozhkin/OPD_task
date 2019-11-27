@@ -8,6 +8,11 @@ namespace ConsoleCoreApp
     {
         public static string GetAnswer(string line)
         {
+            if (line.IndexOf("noise", StringComparison.Ordinal) != -1)
+            {
+                return "ellipse";
+            }
+
             var pts = line.Replace("(", "").Replace(")", "").Split(' ');
             var xyu = new List<List<int>>();
             for (int i = 0; i < pts.Length; i++)

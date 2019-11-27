@@ -13,13 +13,21 @@ namespace ConsoleCoreApp
 
         public static string GetAnswer(string input)
         {
-            var strDet = MatrixDetSolver.GetAns(input);
-            var det = long.Parse(strDet);
-            var m = MatrixDetSolver.GetArrayFromTheString(input);
-            if (det == 0)
+            try
             {
-                return "unsolvable";
+                var strDet = MatrixDetSolver.GetAns(input);
+                var det = long.Parse(strDet);
+                if (det == 0)
+                {
+                    return "unsolvable";
+                }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("To Big Determinant!");
+            }
+
+            var m = MatrixDetSolver.GetArrayFromTheString(input);
             decimal[][] inv = MatrixInverse(m);
 
             var dimensionMatrix = inv.Length;
@@ -31,7 +39,7 @@ namespace ConsoleCoreApp
                     {
                         answer.Append(inv[i][j].ToString(CultureInfo.InvariantCulture) + " & ");
                     }
-                    else if (dimensionMatrix -1 != i)
+                    else if (dimensionMatrix - 1 != i)
                     {
                         answer.Append(inv[i][j].ToString(CultureInfo.InvariantCulture) + " \\\\ ");
                     }
@@ -40,8 +48,8 @@ namespace ConsoleCoreApp
                         answer.Append(inv[i][j].ToString(CultureInfo.InvariantCulture));
                     }
             }
-            return answer.ToString();
 
+            return answer.ToString();
         }
 
         static decimal[][] MatrixCreate(int rows, int cols)

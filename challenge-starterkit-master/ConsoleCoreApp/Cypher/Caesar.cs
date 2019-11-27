@@ -9,7 +9,7 @@ namespace ConsoleCoreApp
     {
         public static string GetAns(string task)
         {
-            return task.StartsWith("first") ? GetNonCeasarCypherAns(task) : GetCeasarAns(task);
+            return task.StartsWith("first") ? GetNonCeasarCypherAns(task) : task.StartsWith("just") ? NewCypher.GetAns(task) : GetCeasarAns(task);
         }
 
         private static string GetNonCeasarCypherAns(string task)
@@ -38,6 +38,5 @@ namespace ConsoleCoreApp
             }
             return d;
         }
-        
     }
 }
